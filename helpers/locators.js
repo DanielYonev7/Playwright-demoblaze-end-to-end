@@ -1,4 +1,4 @@
 export const landingPage = {
-    usernameTest: "test",
+    errorMessageUsername: "//span[text()='Required']",
     errorMessagePassword: "//div[@class='oxd-input-group oxd-input-field-bottom-space']//span[contains(.,'Required')]"
 };

@@ -1,6 +1,6 @@
 import { test } from '@playwright/test'
 import { Login } from '../../helpers/login';
 
-test('Successful login', async({page})=>{
-    await Login(page);
+test('Assert navigation bar', async({page})=>{
+    await Login(page); 
 })
