@@ -8,10 +8,12 @@ test('Assert navigation bar', async({page})=>{
     const items = await page.$$("//ul//li[@class='oxd-main-menu-item-wrapper']")
 
     //print the items in the navigation bar
-    for(const item of items){
+    for(let item of items){
         const itemText = await item.textContent();
         console.log(itemText);
     }
     //expect number of items to be 12
     await expect(navigationBarItems).toHaveCount(12);
-})
+}) 
+
+
