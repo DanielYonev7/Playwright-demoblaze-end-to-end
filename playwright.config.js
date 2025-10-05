@@ -8,10 +8,8 @@ export default defineConfig({
     headless: true, // Run tests in headless mode
     viewport: { width: 1280, height: 720 },
     ignoreHTTPSErrors: true,
-    video: 'retain-on-failure',
   },
-  retries: 1, // Retry failed tests once
-  reporter: [['list']],
+
   projects: [
     {
       name: 'chromium',
