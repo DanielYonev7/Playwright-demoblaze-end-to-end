@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
 import { Login } from '../../helpers/login';
 
-test('Assert navigation bar', async({page})=>{
+test('Assert navigation bar item count', async({page})=>{
     await Login(page);
     const navigationBarItems = page.locator("//ul//li[@class='oxd-main-menu-item-wrapper']");
     
