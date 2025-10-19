@@ -1,9 +1,10 @@
 import { test, expect } from '@playwright/test'
-import { Login } from '../../helpers/login';
+import { LoginPage } from '../../helpers/loginPage';
 
 test("Hide navigation items", async ({page})=>{
-    await Login(page);
+    const loginPage = new LoginPage(page);
 
+    await loginPage.Login('Admin', 'admin123');
     const navigationButton = page.locator("//nav//div//button[@role='none']");
     const navigationBarItems = page.locator("//ul//li//a//span[contains(.,text())]");
 

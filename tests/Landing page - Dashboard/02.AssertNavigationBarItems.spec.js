@@ -1,8 +1,12 @@
 import { test, expect } from '@playwright/test'
-import { Login } from '../../helpers/login';
+import { LoginPage } from '../../helpers/loginPage';
 
 test('Assert navigation bar item count', async({page})=>{
-    await Login(page);
+    const loginPage = new LoginPage(page);
+
+    await loginPage.Login('Admin', 'admin123');
+
+    await page.waitForSelector("//ul//li[@class='oxd-main-menu-item-wrapper']")
     const navigationBarItems = page.locator("//ul//li[@class='oxd-main-menu-item-wrapper']");
     
     const items = await page.$$("//ul//li[@class='oxd-main-menu-item-wrapper']")
